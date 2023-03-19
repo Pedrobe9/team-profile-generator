@@ -117,6 +117,27 @@ function internData() {
 }
 
 
+// function to display the options menu
+function optionsTeam() {
+    inquirer.prompt([
+            {
+                type: 'list',
+                message: 'Thanks.\nChoose what you want to do from the options given below:',
+                name: 'option',
+                choices: ['Add an engineer', 'Add an intern', 'Finish building the team']
+            }
+        ]).then((data) => {
+            if (data.option === 'Add an engineer') {
+                engineerData();
+            } else if (data.option === 'Add an intern') {
+                internData();
+            } else {
+                console.log('Finish team build');
+                const employeesData = render(employeeList);
+                makeTeam(employeesData);
+            }
+        });
+}
 
 
 managerData();
