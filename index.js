@@ -15,3 +15,40 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+let employeeList = [];
+
+// Function to create manager object from data input
+function managerData() {
+    inquirer.prompt([
+            {
+                type: 'input',
+                message: "What is the team manager's name? ",
+                name: 'name'
+            },
+            {
+                type: 'input',
+                message: "What is the team manager's ID ? ",
+                name: 'id'
+            },
+            {
+                type: 'input',
+                message: "What is the team manager's email address? ",
+                name: 'email'
+            },
+            {
+                type: 'input',
+                message: "What is the team manager's Office number? ",
+                name: 'officeNumber'
+            }
+        ]).then((data) => {
+            const { name, id, email, officeNumber } = data;
+            // create the manager object
+            const manager = new Manager(name, id, email, officeNumber);
+            // store data in array employeeList
+            employeeList.push(manager);
+            optionsTeam();
+        });
+}
+
+
+managerData();
