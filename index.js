@@ -154,4 +154,15 @@ function makeTeam(employeesData) {
     }
 
 
+    // Write html file
+    fs.writeFile(outputPath, employeesData, (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('The team page has been created.');
+        }
+    });
+}
+
+
 managerData();
