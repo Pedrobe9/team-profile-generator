@@ -4,6 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+var emailValidator = require("email-validator");
 
 // path.resolve() method resolves a sequence of paths or path segments into an absolute path.
 // From working directory:
@@ -16,6 +17,8 @@ const render = require("./src/page-template.js");
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
 let employeeList = [];
+
+
 
 // Function to create manager object from data input
 function managerData() {
