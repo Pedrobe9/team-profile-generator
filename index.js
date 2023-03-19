@@ -41,13 +41,46 @@ function managerData() {
                 name: 'officeNumber'
             }
         ]).then((data) => {
-            const { name, id, email, officeNumber } = data;
             // create the manager object
+            const { name, id, email, officeNumber } = data;
             const manager = new Manager(name, id, email, officeNumber);
             // store data in array employeeList
             employeeList.push(manager);
             optionsTeam();
         });
+}
+
+
+//// Function to create engineer object from data input
+function engineerData() {
+    inquirer.prompt([
+            {
+                type: 'input',
+                message: "What is the engineer's name? ",
+                name: 'name'
+            },
+            {
+                type: 'input',
+                message: "What is the engineer's ID? ",
+                name: 'id'
+            },
+            {
+                type: 'input',
+                message: "What is the engineer's email address: ",
+                name: 'email'
+            },
+            {
+                type: 'input',
+                message: "What is the engineer's github username: ",
+                name: 'github'
+            }
+        ]).then((data) => {
+            // create the manager object
+            const { name, id, email, github } = data;
+            const engineer = new Engineer(name, id, email, github);
+            employeeList.push(engineer);
+            optionsTeam();
+        })
 }
 
 
