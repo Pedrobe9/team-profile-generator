@@ -6,6 +6,7 @@ Node.js command-line application that will take in information about employees o
 
 This application will build a HTML webpage that displays your team profile. Just answer the prompts that appear in the command line and follow the instructions on screen. Once all questions requiring information about your team are answered, the application will generate a html file showing information about your team (team profile).
 GitHub repository of the application:  https://github.com/Pedrobe9/team-profile-generator
+Code source location of html generated within your repo:  team-profile-generator/output/team.html
 
 
 ## Table of Contents (Optional)
