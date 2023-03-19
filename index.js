@@ -140,4 +140,18 @@ function optionsTeam() {
 }
 
 
+// Make html file creating folder if it doesn't exist
+function makeTeam(employeesData) {
+    // create the output folder if the folder doesn't exist
+    // fs.existsSync() method used to synchronously check if a file already exists
+    //As seen in https://www.geeksforgeeks.org/node-js-fs-existssync-method/
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdir((OUTPUT_DIR), (err) => {
+            if (err) {
+                return console.error(err);
+            }
+        });
+    }
+
+
 managerData();
